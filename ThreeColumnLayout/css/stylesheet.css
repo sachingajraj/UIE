@@ -1,0 +1,113 @@
+#navigation_bar {
+	position: fixed;
+	margin: -10px 0px 0px -10px;
+	background-color: black;
+	height: 50px;
+	width: 100%;
+	z-index: 1;
+}
+
+.navigation_menu {
+	width:940px;
+	margin-left:auto;
+	margin-right:auto;	
+}
+
+#container{
+	width:940px;
+	margin-left:auto;
+	margin-right:auto;	
+}
+
+.display_board {	
+	z-index:1;
+	padding:50px;
+	background-color: #eeeeee;	
+}
+
+.apps_catergory {
+	position: relative;
+	float:left;
+	margin:10px 0px 10px 10px;
+	height:240px;
+	width:32%;	
+}
+
+.display_board p {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:20px;
+}
+
+.display_board h3{
+	font-size: 40px;
+	color: #FF6600;
+}
+
+#footer {
+	position: relative;
+	bottom: 0;
+	height: 50px;
+	clear: both;	
+	border-top:1px solid #c0c0c0;	
+}
+
+ul{
+	list-style-type: none;
+	margin-left:-40px;
+}
+
+li {
+	display:inline;
+	font-family: cursive, Arial, sans-serif;
+	font-size:20px;
+    padding:5px;
+	color: #ffffff;		
+}
+
+li a {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:15px;
+	color:#999999;
+}
+
+li a:link{
+	text-decoration:none;
+	color:#999999;
+}
+
+li a:visited{
+	color:#ffffff;
+}
+
+li a:hover {
+	color:#ffffff;
+}
+
+h3 {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:40px;
+	color: #FF6600;
+}
+
+h2{
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:20px;	
+}
+
+a {
+	text-decoration:none;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #ffffff;		
+}
+
+.button {
+	display:inline-block;
+	padding: 9px 14px;
+	line-height: normal;
+	height: 20px;
+	background: #5bb75b;
+    border: 1px solid rgba(33, 68, 72, 0.59);
+    color: white;    
+	text-align: center;		
+	font: 1em/15px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
