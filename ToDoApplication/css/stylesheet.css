@@ -10,21 +10,42 @@ h3 {
 }
 
 .toDoContainer {
-	width: 30%;
+	width: 500px;
 	background-color: white;
 	margin-top: -50px;
 	margin-left: auto;
 	margin-right: auto;	
 }
 
+.chkBox {
+	float: left;
+	width: 10%;
+	height: 70px;
+	vertical-align: middle;
+	clear: left;
+}
+
+
 .toDoItem {
-	width: 100%;
-	line-height: 70px;
-	background-color: white;
+	height: 70px;
+	width: 82%; 
 	font-size: 30px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	text-align: center;	
-	border: 1px solid #000000;	
-	margin-top: -5px;
+	padding-left: 5%;
+	background-color: white;				
 	color: #999999;
+	clear: right;
+	border: 0px;
+	border-bottom: 1px dashed; 
+	border-left: 1px dashed;	
+}
+
+.topBar {
+	width: 100%;
+	height: 10px;
+	background-color: #ffee44;
+}
+
+.footer {
+
 }

@@ -27,12 +27,20 @@ function randomColor(){
 function onKeyPress(e){
 	if(e.keyCode === 13){
 		var containerDiv = document.getElementById('id1');
-		var newId = "item" + toDoItems.length;
-		toDoItems.push(newId);		
 		var text = document.getElementById('item0').value;
-		var newItem = "<input id=" + newId + " value='" + text +"' class='toDoItem' type='text' onFocus='onToDoItemFocus()' onkeypress='return onToDoKeyPress(event)'></input>";
-		containerDiv.innerHTML += newItem;
-		var itm = document.getElementById(newId);
-		itm.style.color = '#D40D08';	
+		containerDiv.innerHTML += createToDoItem(text);
+		var itm = document.getElementById(toDoItems[toDoItems.length-1]);		
+		itm.style.color = '#000000';
+		document.getElementById('item0').style.color='#999999';			
 	}
+}
+
+function createToDoItem(text){
+	var newId = "item" + toDoItems.length;
+	toDoItems.push(newId);
+	console.log(text);
+	var checkBox = "<input class='chkBox' type='checkBox'></input>";
+	var inputBox = "<input id=" + newId + " value='" + text +"' class='toDoItem' type='text' onFocus='onToDoItemFocus()' onkeypress='return onToDoKeyPress(event)'></input>";
+	var newItem = "<div class='toDoList'>" + checkBox + inputBox + "</div>";
+	return newItem;
 }

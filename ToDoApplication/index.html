@@ -8,7 +8,12 @@
 	<body>
 		<h3>todos</h3>
 		<div id="id1" class="toDoContainer">
-			<input id="item0" class="toDoItem" type="text" value="What needs to be done?" onFocus="onInputBoxFocus()" onkeypress="return onKeyPress(event)"></input>		
+			<div class="topBar"></div>
+			<div class="toDoList">
+				<input class="chkBox" type="checkBox"></input> 
+				<input id="item0" class="toDoItem" type="text" value="What needs to be done?" onFocus="onInputBoxFocus()" onkeypress="return onKeyPress(event)"></input>	
+			</div>
 		</div>
+		<div class="footer"></div>
 	</body>
 </html>
