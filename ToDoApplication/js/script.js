@@ -38,9 +38,8 @@ function onKeyPress(e){
 function createToDoItem(text){
 	var newId = "item" + toDoItems.length;
 	toDoItems.push(newId);
-	console.log(text);
 	var checkBox = "<input class='chkBox' type='checkBox'></input>";
-	var inputBox = "<input id=" + newId + " value='" + text +"' class='toDoItem' type='text' onFocus='onToDoItemFocus()' onkeypress='return onToDoKeyPress(event)'></input>";
+	var inputBox = "<label id='" + newId + "' class='toDoItem' onFocus='onToDoItemFocus()' onkeypress='return onToDoKeyPress(event)'>"+text+" </label>";
 	var newItem = "<div class='toDoList'>" + checkBox + inputBox + "</div>";
 	return newItem;
 }
