@@ -40,8 +40,21 @@ h3 {
 }
 
 .toDoList {
+	position: relative;
 	overflow: hidden;
 	border-bottom: 1px dashed #000000;
+}
+
+.remove {
+	position: absolute;
+	right: 10px;
+	top: 25px;
+	border: 0px;
+	display: none;
+}
+
+.toDoList:hover .remove{
+	display: block;
 }
 
 .topBar {

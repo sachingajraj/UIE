@@ -3,11 +3,22 @@ var DEFAULT_TEXT = "What needs to be done?";
 var toDoItemID = "item";
 
 function onInputBoxFocus(){
-	box = document.getElementById('item0');	
+	var containerDiv = document.getElementById('item0');
+	var box = containerDiv.getElementsByTagName('input')[1];	
 	if (box.value === DEFAULT_TEXT){
 		box.value = "";
-		document.getElementById('item0').style.color = '#000000';
-	}
+	};
+	box.style.color = '#000000';
+}
+
+
+function onInputBoxBlur(){
+	var containerDiv = document.getElementById('item0');
+	var box = containerDiv.getElementsByTagName('input')[1];
+	if (box.value === ""){
+		box.value = DEFAULT_TEXT;				
+	}	
+	box.style.color = '#999999';
 }
 
 function onToDoItemFocus(){
@@ -16,7 +27,6 @@ function onToDoItemFocus(){
 
 function onToDoKeyPress(e){
 	if (e.keyCode === 13) {
-
 	}
 }
 
@@ -27,19 +37,35 @@ function randomColor(){
 function onKeyPress(e){
 	if(e.keyCode === 13){
 		var containerDiv = document.getElementById('id1');
-		var text = document.getElementById('item0').value;
-		containerDiv.innerHTML += createToDoItem(text);
-		var itm = document.getElementById(toDoItems[toDoItems.length-1]);		
-		itm.style.color = '#000000';
-		document.getElementById('item0').style.color='#999999';			
+		var toDoObject= document.getElementById('item0');
+		var inputBox = toDoObject.getElementsByTagName('input')[1];
+		if (inputBox.value !== "") {
+			containerDiv.innerHTML += createToDoItem(inputBox.value);
+			var newToDoItem = document.getElementById(toDoItems[toDoItems.length-1])
+			var label = newToDoItem.getElementsByTagName('label')[0];
+			label.style.color = '#000000';
+		}else{
+			inputBox.blur();			
+		}
+		onInputBoxBlur();
 	}
+}
+
+function removeToDoItem(e){
+	console.log("hi");
+	console.log(e.target.parentNode);
+	var element = e.target.parentNode;
+	var elementID = element.getAttribute('id');
+	console.log(elementID);
+	element.parentNode.removeChild(element);
 }
 
 function createToDoItem(text){
 	var newId = "item" + toDoItems.length;
 	toDoItems.push(newId);
 	var checkBox = "<input class='chkBox' type='checkBox'></input>";
-	var inputBox = "<label id='" + newId + "' class='toDoItem' onFocus='onToDoItemFocus()' onkeypress='return onToDoKeyPress(event)'>"+text+" </label>";
-	var newItem = "<div class='toDoList'>" + checkBox + inputBox + "</div>";
+	var textArea = "<label class='toDoItem' onFocus='onToDoItemFocus()' onkeypress='return onToDoKeyPress(event)'>"+text+" </label>";
+	var removeButton = "<input type='button' class='remove' onClick='removeToDoItem(event)' value='X'> </input>";
+	var newItem = "<div id='" + newId + "' class='toDoList'>" + checkBox + textArea + removeButton + "</div>";
 	return newItem;
 }

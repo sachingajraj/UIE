@@ -9,10 +9,10 @@
 		<h3>todos</h3>
 		<div id="id1" class="toDoContainer">
 			<div class="topBar"></div>
-			<div class="toDoList">
+			<div id="item0" class="toDoList">
 				<input class="chkBox" type="checkBox"></input> 
-				<input id="item0" class="toDoItem" type="text" value="What needs to be done?" onFocus="onInputBoxFocus()" onkeypress="return onKeyPress(event)"></input>	
-			</div>
+				<input class="toDoItem" type="text" value="What needs to be done?" onFocus="onInputBoxFocus()" onkeypress="return onKeyPress(event)" onBlur="onInputBoxBlur()"></input>					
+			</div>			
 		</div>
 		<div class="footer"></div>
 	</body>
